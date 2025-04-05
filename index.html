@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quer tmcn?</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: Arial, sans-serif;
+      color: black;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #sim {
+      background-color: lightgreen;
+      color: black;
+    }
+
+    #nao {
+      background-color: lightcoral;
+      color: black;
+      position: absolute;
+      transition: 0.3s;
+    }
+
+    #conteudo {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="conteudo">
+    <h2>aceita namorar cmg?</h2>
+    <button id="sim">SIM</button>
+    <button id="nao">NÃO</button>
+  </div>
+
+  <script>
+    const botaoNao = document.getElementById("nao");
+    const largura = window.innerWidth - 100;
+    const altura = window.innerHeight - 100;
+
+    botaoNao.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * largura);
+      const y = Math.floor(Math.random() * altura);
+      botaoNao.style.left = `${x}px`;
+      botaoNao.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
