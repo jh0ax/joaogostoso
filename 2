@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quer tmcn?</title>
+  <style>
+    body {
+      background-color: pink;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h2 {
+      color: black;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #nao {
+      position: absolute;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h2>Aceita namorar cmg?</h2>
+  <button id="sim">SIM</button>
+  <button id="nao">NÃO</button>
+
+  <script>
+    const naoBtn = document.getElementById('nao');
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      naoBtn.style.left = `${x}px`;
+      naoBtn.style.top = `${y}px`;
+    }
+
+    // Fugir no desktop
+    naoBtn.addEventListener('mouseenter', moveButton);
+
+    // Fugir no mobile (ao tentar clicar)
+    naoBtn.addEventListener('touchstart', function (e) {
+      e.preventDefault(); // Evita o clique acontecer antes de fugir
+      moveButton();
+    });
+  </script>
+</body>
+</html>
